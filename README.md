@@ -19,7 +19,7 @@ Merges FASTQ files from different Illumina lanes into a single output folder, wi
 This script converts FASTA files to FASTQ format by adding placeholder quality scores to the sequences. It was  used when I only had sequence data in FASTA format but needed to convert it to FASTQ format with quality scores. 
 
 
-###fastq_random_subsampling
+### fastq_random_subsampling
 
 
 It allow to specify the input fastq file, output subsampled fastq file, and the desired subsample size (default 10,000 reads). It uses the seqtk tool to perform random subsampling from the input file. Used this script to reduce the size of large FASTQ files for quicker testing for error models from different illumina platforms and library preps (e.g. tagmentation and mechanical shearing).
