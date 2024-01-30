@@ -13,3 +13,8 @@ Improved version of merging reads from different lanes. It groups files by sampl
 ### merge_lanes_v3
 
 Merges FASTQ files from different Illumina lanes into a single output folder, without considering sample names or strand information. It directly looks for forward and reverse files with a specific naming convention and copies them to the output directory.
+
+### fasta_to_fastq
+
+This script converts FASTA files to FASTQ format by adding placeholder quality scores to the sequences. It was  used when I only had sequence data in FASTA format but needed to convert it to FASTQ format with quality scores. 
+
