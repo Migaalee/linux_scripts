@@ -27,13 +27,13 @@ It allow to specify the input fastq file, output subsampled fastq file, and the 
 
 # Often one liners
 
-- Check space in folder
+- Check space in folder <br>
   du -h --max-depth=1 | grep 'G'
 
-- Check it properly rsynced data
+- Check it properly rsynced data <br>
   rsync -avh --progress --dry-run --checksum ~/input_folder_dir /mnt/mounted_folder/directory
   
-- mount exFAT-formatted external disk
+- mount exFAT-formatted external disk <br>
   sudo mount -t exfat -o uid=$(id -u migla),gid=$(id -g migla) /dev/sda1 /mnt/sda1
 
   
