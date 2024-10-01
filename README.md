@@ -25,7 +25,18 @@ This script converts FASTA files to FASTQ format by adding placeholder quality s
 It allow to specify the input fastq file, output subsampled fastq file, and the desired subsample size (default 10,000 reads). It uses the seqtk tool to perform random subsampling from the input file. Used this script to reduce the size of large FASTQ files for quicker testing for error models from different illumina platforms and library preps (e.g. tagmentation and mechanical shearing).
 
 
+# Often one liners
 
+- Check space in folder
+  du -h --max-depth=1 | grep 'G'
+
+- Check it properly rsynced data
+  rsync -avh --progress --dry-run --checksum ~/input_folder_dir /mnt/mounted_folder/directory
+  
+- mount exFAT-formatted external disk
+  sudo mount -t exfat -o uid=$(id -u migla),gid=$(id -g migla) /dev/sda1 /mnt/sda1
+
+  
 
 
 
