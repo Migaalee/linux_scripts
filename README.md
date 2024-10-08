@@ -36,6 +36,12 @@ It allow to specify the input fastq file, output subsampled fastq file, and the 
 - mount exFAT-formatted external disk <br>
   sudo mount -t exfat -o uid=$(id -u migla),gid=$(id -g migla) /dev/sda1 /mnt/sda1
 
+- check how many CPUs (threads)
+  nproc | lscpu
+
+
+  
+
   
 
 
