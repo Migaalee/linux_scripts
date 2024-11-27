@@ -1,0 +1,13 @@
+
+OUTPUT_FILE="mapped_summary.txt"
+echo "Sample,Total_Reads,Mapped_Reads,Properly_Paired,Mapped_Percentage" > "$OUTPUT_FILE"
+for BAM_FILE in *.bam; do
+    SAMPLE=$(basename "$BAM_FILE" .bam)
+    FLAGSTAT=$(samtools flagstat "$BAM_FILE")
+    TOTAL_READS=$(echo "$FLAGSTAT" | grep "in total" | awk '{print $1}')
+    MAPPED_READS=$(echo "$FLAGSTAT" | grep "mapped (" | awk '{print $1}')
+    PROPERLY_PAIRED=$(echo "$FLAGSTAT" | grep "properly paired (" | awk '{print $1}')
+    MAPPED_PERCENT=$(echo "$FLAGSTAT" | grep "mapped (" | awk -F'[()]' '{print $2}' | tr -d '%')
+    echo "$SAMPLE,$TOTAL_READS,$MAPPED_READS,$PROPERLY_PAIRED,$MAPPED_PERCENT" >> "$OUTPUT_FILE"
+done
+
