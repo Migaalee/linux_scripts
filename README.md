@@ -25,6 +25,11 @@ This script converts FASTA files to FASTQ format by adding placeholder quality s
 It allow to specify the input fastq file, output subsampled fastq file, and the desired subsample size (default 10,000 reads). It uses the seqtk tool to perform random subsampling from the input file. Used this script to reduce the size of large FASTQ files for quicker testing for error models from different illumina platforms and library preps (e.g. tagmentation and mechanical shearing).
 
 
+### calculate_avg_depth
+This script calculates the average depth of coverage for BAM files in a specified directory. For each BAM file, it uses samtools depth to generate a depth profile and then computes the average depth using awk. The results, including the sample name and its corresponding average depth, are saved to a summary file. This script is used to assess and compare sequencing coverage across multiple samples.
+
+
+
 # Often one liners
 
 - Check space in folder <br>
