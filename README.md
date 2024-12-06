@@ -26,7 +26,12 @@ It allow to specify the input fastq file, output subsampled fastq file, and the 
 
 
 ### calculate_avg_depth
-This script calculates the average depth of coverage for BAM files in a specified directory. For each BAM file, it uses samtools depth to generate a depth profile and then computes the average depth using awk. The results, including the sample name and its corresponding average depth, are saved to a summary file. This script is used to assess and compare sequencing coverage across multiple samples.
+This script calculates the average depth of coverage for BAM files in a specified directory. For each BAM file, it uses samtools depth to generate a depth profile and then computes the average depth using awk. The results, including the sample name and its corresponding average depth, are saved to a summary file. This script is used to assess and compare sequencing coverage across multiple samples  
+
+### downsampple_bams.sh  
+
+This script downsamples BAM files to a specified target depth using samtools. It calculates the average depth for each BAM file and, if it exceeds the target, computes a fraction for downsampling. Files with depth below the target are copied directly. Downsampled BAM files and a summary of average depths are saved in designated output files. Seed added for reproducibility. Also added additional numerical checks for calculation of fraction. 
+
 
 
 
