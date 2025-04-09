@@ -49,6 +49,10 @@ This script downsamples BAM files to a specified target depth using samtools. It
 - check how many CPUs (threads)
   nproc | lscpu
 
+- how many files in a folder
+  ls -1 *.txt 2>/dev/null | wc -l
+
+
 
   
 
