@@ -52,8 +52,8 @@ IFS=$'\n\t'  # Setting internal field separator to newline and tab
 # Reading sequences from input FASTA file and writing to output FASTQ file with placeholder quality
 while IFS= read -r line; do
   if [[ $line == ">"* ]]; then
-    # Header line, write as-is
-    echo "$line" >> "$output_file"
+    # Header line, replace leading '>' with '@'
+    echo "@${line:1}" >> "$output_file"
   else
     # Sequence line, add placeholder quality scores
     echo "$line" >> "$output_file"
